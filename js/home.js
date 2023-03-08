@@ -1,8 +1,8 @@
-// window.onload = function() {
-//     document.getElementById("magic").addEventListener("click",function(){
-//         onOpenCvReady();
-//     });
-// }
+window.onload = function() {
+    document.getElementById("magic").addEventListener("click",function(){
+        playVideo();
+    });
+}
 
 
 // function onOpenCvReady() {

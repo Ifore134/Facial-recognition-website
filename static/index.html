@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\css\home-page.css"> 
     <script src="..\js\home.js"  type="text/javascript"></script>
-    <script src="..\js\opencv.js" type="text/javascript"></script>
+    
     <title>Document</title>
     
 </head>
@@ -19,48 +19,11 @@
     <video id="input_video" height="480" width="640"></video>
     <canvas id="output_video" height="480" width="640"></canvas>
     
-    <script>
-       async function playVideo() {
-    let video = document.getElementById('input_video'); //add a video tag with id videoElement
-    let frame = new cv.Mat(video.height, video.width, cv.CV_8UC4)
-
-    const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
-    if ("srcObject" in video) {
-        video.srcObject = mediaStream;
-    } else {
-        // Avoid using this in new browsers, as it is going away.
-        video.src = URL.createObjectURL(mediaStream);
-    }
-    video.onloadedmetadata = () => {
-      video.play();
-    };
-    cv.imshow('output_video', frame);
-};
-
-async function onCVLoad() {
-    if (cv.getBuildInformation) {
-        console.log(cv.getBuildInformation());
-        playVideo();
-    }
-    else {
-        // WASM
-        if (cv instanceof Promise) {
-            cv = await cv;
-            console.log(cv.getBuildInformation());
-            playVideo();
-        } else {
-            cv['onRuntimeInitialized'] = () => {
-                console.log(cv.getBuildInformation());
-                playVideo();
-            }
-        }
-    }
-}
-
-    </script>
+   
 
     <!-- CALLING OPEN CV JAVASCRIPT -->
-    <script async src="https://docs.opencv.org/master/opencv.js" id="opencvjs" onload="playVideo()"></script>
+    <script src="..\js\opencv.js" type="text/javascript"></script>
+    <script async src="https://docs.opencv.org/master/opencv.js" id="opencvjs" ></script> 
 
     
 </body>
