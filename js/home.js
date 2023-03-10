@@ -1,6 +1,7 @@
 window.onload = function() {
     document.getElementById("magic").addEventListener("click",function(){
         playVideo();
+        inverseColors();
     });
 }
 
@@ -29,6 +30,10 @@ window.onload = function() {
 //     }
 //     setTimeout(processVideo, 0);
 // }
+function inverseColors(){
+    let vid = document.getElementById("input_video");
+    vid = 255-vid
+}
 
 async function playVideo() {
     let video = document.getElementById('input_video'); //add a video tag with id videoElement
@@ -45,7 +50,7 @@ async function playVideo() {
       video.play();
     };
     cv.imshow('output_video', frame);
-};
+}
 
 async function onCVLoad() {
     if (cv.getBuildInformation) {
