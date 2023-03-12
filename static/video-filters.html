@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\css\home-page.css"> 
+    <link rel="stylesheet" href="..\css\vf-page.css"> 
+    <link rel="stylesheet" href="..\css\home-page.css">
     <script src="..\js\home.js"  type="text/javascript"></script>
-    
+    <script src="..\js\filters.js"  type="text/javascript"></script>
     <title>Filters</title>
     
 </head>
-<body>
+<body id="vfBody">
     <div class="header" id="header">
         <h3>Face recog</h3>
     </div>
-    
-    <div class="page" id="video-filters">
+    <div id="videoPlaceholder">
+
+    </div>
+    <div class="page" id="video-filters" >
+
+        <!-- <div class="inputoutput">
+            <img id="imageSrc" alt="No Image" />
+            <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
+          </div> -->
         <div class="video-area">
         <video id="input_video" height="480" width="640"></video>
-        <canvas id="output_video" height="480" width="640"></canvas>
-        </div>
-        <button id="magic" >Click</button>
+        <canvas id="output_vid" height="480" width="640"></canvas>
+        </div> 
+        
     </div>
+    <button id="takeVid" >Run video</button> 
 
    
     
@@ -31,6 +40,8 @@
     <!-- CALLING OPEN CV JAVASCRIPT -->
     <script src="..\js\opencv.js" type="text/javascript"></script>
     <script async src="https://docs.opencv.org/master/opencv.js" id="opencvjs" ></script> 
+    
+    
 
     
 </body>

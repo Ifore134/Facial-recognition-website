@@ -1,10 +1,13 @@
-window.onload = function() {
-    document.getElementById("magic").addEventListener("click",function(){
-        playVideo();
-        inverseColors();
-    });
-}
-
+// window.onload = function() {
+//     document.getElementById("magic").addEventListener("click",function(){
+//         playVideo();
+//         inverseColors();
+//     });
+// }
+// document.getElementById("magic").addEventListener("click",function(){
+//              playVideo();
+//              inverseColors();
+//          });
 
 // function onOpenCvReady() {
 //     let video = document.getElementById('video');
